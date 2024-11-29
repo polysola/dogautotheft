@@ -1,0 +1,672 @@
+@import url("css2.css");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: all 0.2s;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Fredoka", sans-serif;
+  background-color: #610276;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 100px;
+  background-color: #610276;
+  color: white;
+}
+
+/* Logo styling */
+.logo img {
+  width: 40px;
+}
+
+/* Navigation links styling */
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.nav-links li a.active {
+  color: #0b0b12;
+  background: rgba(255, 255, 255, 0.959);
+  padding: 10px;
+  border-radius: 30px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Each navigation link */
+.nav-links li {
+  margin: 0 15px;
+}
+
+/* Anchor tag styling */
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  transition: color 0.3s ease;
+  font-family: luckiest guy;
+}
+
+/* Link hover effect */
+.nav-links a:hover {
+  color: #cccccc;
+}
+
+/* Join button styling */
+.join-btn {
+  background-color: #1280fe;
+  color: #fff;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: luckiest guy;
+  box-shadow: 0px 8px 0px rgba(0, 0, 0, 0.863);
+  width: 150px;
+}
+
+/* Join button hover effect */
+.join-btn:hover {
+  background-color: #0f6ad3;
+}
+
+/* Hamburger menu styling */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+/* Styling each bar in the hamburger menu */
+.bar {
+  height: 3px;
+  width: 25px;
+  background-color: #fff;
+  margin: 2px 0;
+  transition: 0.3s;
+  z-index: 10;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: #610276;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 9;
+  }
+
+  .navbar {
+    padding: 20px;
+  }
+
+  .nav-links .join-btn {
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 3rem;
+  }
+
+  .nav-links li {
+    margin: 20px 0;
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+}
+
+/* start of hero */
+
+.hero {
+  background-image: url("../images/%20background.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-container {
+  /* padding-top: 4rem; */
+  padding-left: 3rem;
+  display: flex;
+  gap: 100px;
+  justify-content: center;
+  align-items: center;
+}
+
+.btns {
+  margin-top: 2rem;
+}
+
+.left p {
+  font-size: 1.8rem;
+  font-family: luckiest guy;
+  color: #fff;
+  text-shadow: 0px 7px 4px rgba(0, 0, 0, 1);
+}
+
+.left img {
+  width: 500px;
+}
+.right img {
+  width: 600px;
+  margin-bottom: 3rem;
+}
+
+.button-primary {
+  color: #000;
+  border: solid 3px #000;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: luckiest guy;
+  letter-spacing: 1px;
+  background-color: #fff;
+}
+
+.blue {
+  background-color: #1280fe;
+  color: #fff;
+}
+
+/* media queries */
+@media screen and (max-width: 1299px) {
+  .right img {
+    width: 600px;
+    margin-bottom: 3rem;
+  }
+
+  .left img {
+    width: 450px;
+  }
+
+  .left p {
+    font-size: 1.5rem;
+  }
+
+  .hero-container {
+    gap: 50px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .right img {
+    width: 550px;
+    margin-bottom: 0;
+  }
+
+  .hero-container {
+    flex-direction: column;
+    padding-top: 50px;
+  }
+
+  .right img {
+    display: none;
+  }
+
+  .hero {
+    height: 80vh;
+  }
+}
+
+@media (max-width: 768px) {
+  #left img {
+    width: 380px;
+  }
+
+  .left p {
+    font-size: 1.3rem;
+  }
+
+  .hero-container {
+    padding: 6rem 1rem 1rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #left img {
+    width: 100%;
+  }
+
+  .btns {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .left img {
+    width: 400px;
+  }
+
+  .right img {
+    width: 600px;
+    margin-bottom: 0;
+  }
+  .left p {
+    font-size: 1.5rem;
+  }
+  .hero-container {
+    gap: 20px;
+  }
+}
+
+/* end of hero */
+
+/* start of about */
+.about-container {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  align-items: start;
+  padding: 50px;
+  margin-top: 3rem;
+}
+
+.about-img img {
+  width: 500px;
+}
+
+.about-text img {
+  width: 300px;
+}
+.about-text p {
+  font-family: luckiest guy;
+  font-size: 1.5rem;
+  color: #fff;
+  margin-top: 2rem;
+}
+.about-text {
+  padding: 50px;
+}
+.about-text ul {
+  font-family: luckiest guy;
+  color: #fff;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.about-text li {
+  margin-top: 1rem;
+}
+
+/* media queries*/
+
+@media screen and (max-width: 1299px) {
+  .about-container {
+    gap: 20px;
+  }
+
+  .about-img img {
+    width: 450px;
+  }
+
+  .about-text {
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .about-text p {
+    font-size: 1.2rem;
+  }
+  .about-text {
+    padding: 10px;
+  }
+
+  .about-text ul {
+    font-size: 1.2rem;
+  }
+  .about-img img {
+    width: 100%;
+  }
+
+  .about-text img {
+    width: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column-reverse;
+  }
+  .about-img img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-container {
+    padding: 16px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+}
+
+/* end of about */
+
+/* start of tokenomics */
+.tokenomics-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.tokenomics-top {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.tokenomics-top img {
+  width: 400px;
+}
+
+.tokenomics-top p {
+  font-family: luckiest guy;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  color: #fff;
+  width: 800px;
+}
+
+.token-grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 50px;
+  margin-top: 3rem;
+}
+
+.grid-1 {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  background-color: #f8a8ff;
+  border-radius: 5px;
+  box-shadow: 8px 8px 0px #000;
+  max-width: 600px;
+  /* height: 200px; */
+  padding: 30px;
+  gap: 20px;
+}
+
+.grid-1 img {
+  width: 300px;
+}
+
+.grid-1 p {
+  font-family: luckiest guy;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.grid-2 {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  background-color: #f8a8ff;
+  border-radius: 5px;
+  box-shadow: 8px 8px 0px #000;
+  max-width: 600px;
+  padding: 30px;
+  gap: 20px;
+}
+
+.grid-2 img {
+  width: 300px;
+}
+
+.grid-2 p {
+  font-size: 2rem;
+  font-family: luckiest guy;
+}
+
+.li {
+  width: 250px;
+}
+
+/* media queries */
+
+@media screen and (max-width: 1199px) {
+  .token-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 1299px) {
+}
+
+@media screen and (max-width: 991px) {
+}
+@media (max-width: 798px) {
+  .token-grid {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .tokenomics-top p {
+    width: 100%;
+    font-size: 1.2rem;
+  }
+  .tokenomics-top {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tokenomics-top img {
+    width: 100%;
+  }
+
+  .grid-1 img {
+    width: 100%;
+  }
+
+  .grid-2 img {
+    width: 200px;
+  }
+  .grid-1 p {
+    font-size: 1.8rem;
+  }
+}
+/* start of tokenomics */
+
+/* start of community */
+
+.community-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 50px 50px 0px 50px;
+  margin-top: 4rem;
+}
+
+.community-top img {
+  width: 400px;
+}
+
+.community-top p {
+  font-family: luckiest guy;
+  font-size: 1.5rem;
+  color: #fff;
+  margin-top: 1rem;
+  max-width: 800px;
+  text-shadow: 0px 7px 4px rgba(0, 0, 0, 1);
+}
+
+.comm-buttom img {
+  width: 100%;
+}
+
+.community {
+  background-image: url("../images/%20background.jpg");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+/* media queries */
+
+@media screen and (max-width: 1199px) {
+}
+
+@media screen and (max-width: 1299px) {
+}
+
+@media screen and (max-width: 991px) {
+}
+@media (max-width: 768px) {
+  .community-container {
+    padding: 20px 20px 0px 20px;
+  }
+  .community-top p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .community-top img {
+    width: 100%;
+  }
+
+  .community-top p {
+    font-size: 1.3rem;
+  }
+}
+/* end of community */
+
+/* start of footer */
+
+footer {
+  text-align: center;
+  padding: 20px;
+}
+
+footer .logo {
+  display: flex;
+  justify-content: center;
+}
+
+footer ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin-block: 20px;
+  gap: 20px;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: #fff;
+  margin-inline: 8px;
+  font-size: 14px;
+  font-family: luckiest guy;
+}
+
+hr {
+  border: 1px solid #fff;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bottom ul li a {
+  margin-inline: 3px;
+  font-size: 13px;
+}
+
+.copyright p {
+  color: #fff;
+  font-size: 13px;
+  font-family: luckiest guy;
+}
+
+.logo img {
+  border-radius: 50px;
+}
+
+/* media queries */
+@media screen and (max-width: 1199px) {
+}
+
+@media screen and (max-width: 1299px) {
+}
+
+@media screen and (max-width: 991px) {
+}
+@media (max-width: 768px) {
+}
+
+@media (max-width: 480px) {
+  footer ul {
+    gap: 5px;
+  }
+}
+
+/* end of footer */
